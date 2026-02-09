@@ -1,13 +1,15 @@
-package com.java.java8;
+package com.java.hackerrank.string;
 
 public class RemoveDuplicates {
 
 	public static void main(String[] args) {
 		String s1 = "aabbbccccddddd";
 		String s2 = "say yes to no and yes to no and yes to no yes no";
+		int[] n = {0, 6,9,1,0,3,7,4,0,1,2,8,5,3,9};
 		
 		removeDuplicates1(s1);
 		removeDuplicates2(s2);
+		removeDuplicates3(n);
 		
 	}
 
@@ -41,6 +43,26 @@ public class RemoveDuplicates {
 			}
 		}
 		System.out.println(sb.toString());
+	}
+	
+	private static void removeDuplicates3(int[] n) {
+		int [] n1=new int[n.length];
+		int k=0;
+		for(int i=0; i<n.length; i++) {
+			boolean seen = false;
+			for(int j=0; j<i; j++) {
+				if(n[i]==n[j]) {
+					seen=true;
+					break;
+				}
+			}
+			if(!seen) {
+				n1[k++]=n[i];
+			}
+		}
+		for(int i=0; i<k; i++) {
+			System.out.print(n1[i]+" ");
+		}
 	}
 
 }

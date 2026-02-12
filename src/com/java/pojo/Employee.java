@@ -5,7 +5,7 @@ public class Employee {
 	private long empId;
 	private String empName;
 	private double empSalary;
-	private String empLocation;
+	private String empDepartment;
 	
 	public long getEmpId() {
 		return empId;
@@ -25,19 +25,19 @@ public class Employee {
 	public void setEmpSalary(double empSalary) {
 		this.empSalary = empSalary;
 	}
-	public String getEmpLocation() {
-		return empLocation;
+	public String getEmpDepartment() {
+		return empDepartment;
 	}
-	public void setEmpLocation(String empLocation) {
-		this.empLocation = empLocation;
+	public void setEmpDepartment(String empDepartment) {
+		this.empDepartment = empDepartment;
 	}
 	
-	public Employee(long empId, String empName, double empSalary, String empLocation) {
+	public Employee(long empId, String empName, double empSalary, String empDepartment) {
 		super();
 		this.empId = empId;
 		this.empName = empName;
 		this.empSalary = empSalary;
-		this.empLocation = empLocation;
+		this.empDepartment = empDepartment;
 	}
 	
 	public Employee() {
@@ -46,7 +46,7 @@ public class Employee {
 	
 	@Override
 	public String toString() {
-		return "Employee [empId=" + empId + ", empName=" + empName + ", empSalary=" + empSalary + ", empLocation="
-				+ empLocation + "]";
+		return "Employee [empId=" + empId + ", empName=" + empName + ", empSalary=" + empSalary + ", empDepartment="
+				+ empDepartment + "]";
 	}
 }

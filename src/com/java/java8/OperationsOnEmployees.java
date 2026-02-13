@@ -109,6 +109,10 @@ public class OperationsOnEmployees {
 				list.stream().collect(Collectors.groupingBy(Employee::getEmpDepartment, 
 				Collectors.mapping(Employee::getEmpName, Collectors.toList())));
 		map.forEach((dep, namelist) -> System.out.println(dep+": "+namelist));
+
+		System.out.println();
+		System.out.println("Group employee based on dpeartment");
+		System.out.println(	list.stream().collect(Collectors.groupingBy(Employee::getEmpDepartment)) );
 	}
 	
 	private static void countEmployeesInEachDepartment(List<Employee> list) {
@@ -124,7 +128,7 @@ public class OperationsOnEmployees {
 				Employee::getEmpDepartment, 
 				Collectors.collectingAndThen(
 						Collectors.maxBy(Comparator.comparingDouble(Employee::getEmpSalary)), Optional::get)));
-		map.forEach( (dep, name) -> System.out.println(dep+": "+name.getEmpName()));
+		map.forEach( (dep, emp) -> System.out.println(dep+": "+emp.getEmpName()));
 	}
 	
 	private static void sortEmployeesInEachDepartment(List<Employee> list) {
